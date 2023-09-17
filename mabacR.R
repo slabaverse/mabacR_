@@ -1,5 +1,3 @@
-library(readxl)
-
 processar_dados <- function(nome_arquivo) {
   # Lê o arquivo xlsx
   dados <- read_excel(nome_arquivo)
