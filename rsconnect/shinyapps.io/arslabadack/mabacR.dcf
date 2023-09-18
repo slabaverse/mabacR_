@@ -5,9 +5,10 @@ account: arslabadack
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9888528
-bundleId: 7692696
+bundleId: 7700191
 url: https://arslabadack.shinyapps.io/mabacR/
-when: 1694884199.07059
-lastSyncTime: 1694884199.07062
+when: 1695079660.44995
+lastSyncTime: 1695079660.44997
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: mabacr.xlsx

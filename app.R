@@ -12,19 +12,19 @@ source("barras.R")
 source("barras_analise.R")
 
 ui <- fluidPage(
-  titlePanel("Multi-Attributive Border Approximation area Comparison (MABAC)"),
+  titlePanel("Multi-Attributive Border Approximation Area Comparison (MABAC)"),
 
   sidebarLayout(
     sidebarPanel(
       fileInput("file", "Selecione o arquivo:"),
       tags$div(
         hr(),
-        h5("Esta é uma implementação do Multi-Attributive Border Approximation area Comparison (MABAC), um método multicritério para tomada de decisão. Recomendamos assistir o vídeo 'Como preencher a planilha mabacr.xlsx?' para um melhor entendimento de como utilizar aplicativo. A planilha padrão para o preenchimento dos dados que serão analisados, você encontra para download abaixo."),
+        h5("Esta é uma implementação do Multi-Attributive Border Approximation Area Comparison (MABAC), um método multicritério para tomada de decisão. Recomendamos realizar o download do manual de uso do aplicativo (manual.pdf) e assistir o vídeo 'Como preencher a planilha mabacr.xlsx?' para um melhor entendimento de como utilizar aplicativo. A planilha padrão para o preenchimento dos dados que serão analisados, você encontra para download abaixo."),
         hr(),
         #incluir o manual de uso aqui
-        HTML("Guia de uso: <a href =
+        HTML("Manual de uso: <a href =
                'Manual waspasWEB PT.pdf'>
-               Portuguese</a>"),
+               manual.pdf</a>"),
         p(),
         HTML("Planilha padrão: <a href =
                'https://arslabadack.shinyapps.io/mabacR/mabacr.xlsx'>
@@ -38,7 +38,15 @@ ui <- fluidPage(
                'https://github.com/arslabadack/mabacR.git'>
                GitHub</a>"),
         p(),
-        h5("Todos os direitos reservados. O uso não comercial (acadêmico) dos recursos disponíveis nessa página é gratuito. Solicitamos a gentileza de citar a ferramenta em seus resultados"),
+        #upar o tcc aqui
+        HTML("Implementação do Método Multicritério MABAC na Linguagem R: Uma Ferramenta para Tomada de Decisão <a href =
+               'Manual waspasWEB PT.pdf'>
+               tcc.pdf</a>"),
+        p(),
+        hr(),
+        h5("Ficamos imensamente felizes que você escolheu nosso aplicativo para auxiliar na sua tomada de decisão. Sinta-se à vontade para utilizá-lo e, se quiser conhecer mais a fundo, o código fonte está no item 'Repositório no GitHub: GitHub'. Ficamos gratos se você nos citar em seus resultados. Caso deseje conferir o trabalho resultante deste aplicativo, ele encontra-se no item 'Implementação do Método Multicritério MABAC na Linguagem R: Uma Ferramenta para Tomada de Decisão."),
+        p(),
+        HTML("Fonte para citação: <em>Slabadack, Adam; SANTOS, Marcos dos. Aplicativo MABAC em R (v.1), 2023.</em>"),
         p(),
         HTML("Contato: <a href =
                'mailto:arslabadack@gmail.com'>arslabadack@gmail.com</a>"),
