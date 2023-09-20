@@ -104,51 +104,17 @@ matrix_q <- function(baa, matriz_normalizada_peso){
 
 ranking <- function(itens_avaliados, matriz_q) {
   # Verificar se os dataframes têm o mesmo número de linhas
-  if (nrow(itens_avaliados) != nrow(matriz_q)) {
-    stop("Os dataframes 'itens_avaliados' e 'matriz_q' devem ter o mesmo número de linhas.")
+  if (length(itens_avaliados) != nrow(matriz_q)) {
+    stop("Os vetores 'itens_avaliados' e 'matriz_q' devem ter o mesmo número de elementos.")
   }
 
   # Calcular a soma de cada linha da matriz_q
   soma_linhas <- rowSums(matriz_q)
 
   # Criar o dataframe de ranking
-  ranking <- data.frame(Item = itens_avaliados$Critérios, Soma = soma_linhas)
+  ranking <- data.frame(Item = itens_avaliados, Soma = soma_linhas)
 
-  ranking <- ranking[order(-ranking$Soma), ]
+  resultado_ranking <- ranking[order(-ranking$Soma), ]
 
-  return(ranking)
+  return(resultado_ranking)
 }
-
-
-arquivo <- "mabacr.xlsx"
-
-  resultado <- processar_dados(arquivo)
-
-  # Acessando os dataframes resultantes
-  #peso <- resultado$peso
-  #tipo <- resultado$tipo
-  #valores <- resultado$valores
-  #itens_avaliados <- resultado$itens_avaliados
-
-  dados_maxmin <- calcular_maxmin_diferenca(resultado$valores)
-
-  matriz_normalizada <- normalizar_valores(resultado$valores, resultado$tipo, dados_maxmin)
-
-  matriz_normalizada_peso <- normalizar_valores_peso(matriz_normalizada, resultado$peso)
-
-  baa <- border_aproximation_area(matriz_normalizada_peso)
-
-  matriz_q <- matrix_q(baa, matriz_normalizada_peso)
-
-  ranking <- ranking(resultado$itens_avaliados, matriz_q)
-
-  matriz_normalizada <- as.data.frame(matriz_normalizada)
-
-  matriz_normalizada_peso <- as.data.frame(matriz_normalizada_peso)
-
-  baa <- as.data.frame(baa)
-
-  matriz_q <- as.data.frame(matriz_q)
-
-  ranking <- as.data.frame(ranking)
-

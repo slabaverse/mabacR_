@@ -19,7 +19,7 @@ ui <- fluidPage(
       fileInput("file", "Selecione o arquivo:"),
       tags$div(
         hr(),
-        h5("Esta é uma implementação do Multi-Attributive Border Approximation Area Comparison (MABAC), um método multicritério para tomada de decisão. Recomendamos realizar o download do manual de uso do aplicativo (manual.pdf) e assistir o vídeo 'Como preencher a planilha mabacr.xlsx?' para um melhor entendimento de como utilizar aplicativo. A planilha padrão para o preenchimento dos dados que serão analisados, você encontra para download abaixo."),
+        h5("Esta é uma implementação do Multi-Attributive Border Approximation Area Comparison (MABAC), um método multicritério para tomada de decisão. Recomendamos fazer o download do manual de uso do aplicativo (manual.pdf) e assistir ao vídeo 'Como preencher a planilha mabacr.xlsx?' para uma melhor compreensão de como usar o aplicativo. A planilha padrão para o preenchimento dos dados que serão analisados está disponível para download abaixo."),
         hr(),
         HTML("Manual de uso: <a href =
                'https://arslabadack.shinyapps.io/mabacR/manual.pdf'>
@@ -43,9 +43,9 @@ ui <- fluidPage(
                tcc.pdf</a>"),
         p(),
         hr(),
-        h5("Ficamos imensamente felizes que você escolheu nosso aplicativo para auxiliar na sua tomada de decisão. Sinta-se à vontade para utilizá-lo e, se quiser conhecer mais a fundo, o código fonte está no item 'Repositório no GitHub: GitHub'. Ficamos gratos se você nos citar em seus resultados. Caso deseje conferir o trabalho resultante deste aplicativo, ele encontra-se no item 'Implementação do Método Multicritério MABAC na Linguagem R: Uma Ferramenta para Tomada de Decisão."),
+        h5("Ficamos imensamente felizes por você ter escolhido nosso aplicativo para auxiliar em sua tomada de decisão. Sinta-se à vontade para utilizá-lo e, se desejar conhecer mais a fundo, o código-fonte está disponível no item 'Repositório no GitHub: GitHub'. Ficaríamos gratos se você nos mencionasse em seus resultados. Caso queira conferir o trabalho resultante deste aplicativo, ele está disponível no item 'Implementação do Método Multicritério MABAC na Linguagem R: Uma Ferramenta para Tomada de Decisão'."),
         p(),
-        HTML("Fonte para citação: <em>Slabadack, Adam; SANTOS, Marcos dos. Aplicativo MABAC em R (v.1), 2023.</em>"),
+        HTML("Fonte para citação: <em>SLABADACK, Adam; SANTOS, Marcos dos. Aplicativo MABAC em R (v.1), 2023.</em>"),
         p(),
         HTML("Contato: <a href =
                'mailto:arslabadack@gmail.com'>arslabadack@gmail.com</a>"),
@@ -85,7 +85,7 @@ server <- function(input, output, session) {
       file
     })
 
-    output$results <- renderPrint({
+   output$results <- renderPrint({
       resultado
     })
 
