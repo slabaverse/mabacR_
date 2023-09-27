@@ -8,7 +8,7 @@ grafico_baa <- function(dataframe, coluna) {
     geom_hline(yintercept = dataframe[2, coluna], color = "red", linetype = "dashed", size = 1.2) +  # Linha central aumentada para size 1.2
     xlab(NULL) +
     ylab(NULL) +
-    ggtitle("Gráfico de Dispersão") +
+    ggtitle(NULL) +
     #scale_color_manual(values = rainbow(length(rotulos)), breaks = rotulos, labels = rotulos) +
     scale_color_brewer(palette = "Set1") +
     guides(color = guide_legend(title = NULL, keywidth = 3, keyheight = 3, label.theme = element_text(size = 14)))+  # Tamanho da legenda aumentado para size 14 e tamanho da chave (key) aumentado para 2

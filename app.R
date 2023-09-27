@@ -61,7 +61,7 @@ ui <- fluidPage(
         tabPanel("Resultados",
                  fluidRow(
                    column(6,
-                          h4("Escolha ótima"),
+                          h4("Escolha Ótima"),
                           verbatimTextOutput("results")
                    ),
                    column(6,
