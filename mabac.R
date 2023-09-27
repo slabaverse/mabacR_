@@ -66,5 +66,5 @@ mabacR <- function(mabac_df) {
     return("ERRO: Falha ao calcular o ranking")
   }
 
-  return(ranking)
+  return(list(ranking = ranking, baa = baa, matriz_q = matriz_q))
 }
