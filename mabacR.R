@@ -1,30 +1,25 @@
 processar_dados <- function(nome_arquivo) {
-  # Lê o arquivo xlsx
+
   dados <- read_excel(nome_arquivo)
 
-  # Cria o dataframe "peso" usando a primeira linha
   peso <- data.frame(peso = dados[1, -1])
 
-  # Cria o dataframe "tipo" usando a segunda linha
   tipo <- data.frame(tipo = dados[2, -1])
 
-  # Extrair a primeira coluna a partir da quarta linha
   itens_avaliados <- data.frame(itens_avaliados = dados[3:nrow(dados), 1])
 
-  # Cria o dataframe "valores" excluindo as duas primeiras linhas e a primeira coluna
   valores <- dados[-c(1, 2), -1]
 
-  # Retorna os dataframes resultantes
   return(list(peso = peso, tipo = tipo, valores = valores, itens_avaliados = itens_avaliados))
-  #return(peso, tipo, valores, itens_avaliados)
+
 }
 
 calcular_maxmin_diferenca <- function(valores) {
-  maximos <- apply(valores, 2, max)  # Calcula os máximos das colunas
-  minimos <- apply(valores, 2, min)  # Calcula os mínimos das colunas
+  maximos <- apply(valores, 2, max)
+  minimos <- apply(valores, 2, min)
 
-  diferencas <- maximos - minimos  # Calcula as diferenças entre máximos e mínimos
-  diferencas_negativas <- -diferencas  # Multiplica as diferenças por -1
+  diferencas <- maximos - minimos
+  diferencas_negativas <- -diferencas
 
   dados_maxmin <- data.frame(
     maximo = maximos,
@@ -33,8 +28,8 @@ calcular_maxmin_diferenca <- function(valores) {
     diferenca_negativa = diferencas_negativas
   )
 
-  row.names(dados_maxmin) <- colnames(valores)  # Define os nomes das linhas
-  dados_maxmin <- t(dados_maxmin)  # Transpõe o dataframe
+  row.names(dados_maxmin) <- colnames(valores)
+  dados_maxmin <- t(dados_maxmin)
 
   return(dados_maxmin)
 }
@@ -77,12 +72,10 @@ normalizar_valores_peso <- function(matriz_normalizada, peso) {
   return(df_normalizado_peso)
 }
 
-# Função para calcular a média geométrica e salvar em um novo dataframe
 border_aproximation_area <- function(df_normalizado_peso) {
-  # Calcular a média geométrica das colunas
+
   media_geometrica <- exp(colMeans(log(df_normalizado_peso)))
 
-  # Criar um novo dataframe com os resultados
   df_daa <- data.frame(MediaGeometrica = media_geometrica)
 
   return(t(df_daa))
@@ -103,15 +96,13 @@ matrix_q <- function(baa, matriz_normalizada_peso){
 }
 
 ranking <- function(itens_avaliados, matriz_q) {
-  # Verificar se os dataframes têm o mesmo número de linhas
+
   if (length(itens_avaliados) != nrow(matriz_q)) {
     stop("Os vetores 'itens_avaliados' e 'matriz_q' devem ter o mesmo número de elementos.")
   }
 
-  # Calcular a soma de cada linha da matriz_q
   soma_linhas <- rowSums(matriz_q)
 
-  # Criar o dataframe de ranking
   ranking <- data.frame(Item = itens_avaliados, Soma = soma_linhas)
 
   resultado_ranking <- ranking[order(-ranking$Soma), ]

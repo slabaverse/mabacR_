@@ -1,13 +1,10 @@
-# app.R
 library(openxlsx)
 library(shiny)
 library(readxl)
 library(DT)
 library(ggplot2)
 library(bslib)
-library(viridis)
 
-# Carregar a função mabacR do arquivo mabac.R
 source("mabac.R")
 source("barras_analise.R")
 source("grafico_baa.R")
