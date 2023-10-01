@@ -5,9 +5,9 @@ account: arslabadack
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9888528
-bundleId: 7736578
+bundleId: 7740862
 url: https://arslabadack.shinyapps.io/mabacR/
-when: 1695866688.44029
-lastSyncTime: 1695866688.4403
+when: 1695942718.606
+lastSyncTime: 1695942718.60603
 asMultiple: FALSE
 asStatic: FALSE

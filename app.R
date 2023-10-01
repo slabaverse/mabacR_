@@ -20,7 +20,7 @@ ui <- fluidPage(
         h6("Esta é uma implementação do Multi-Attributive Border Approximation Area Comparison (MABAC), um método multicritério para tomada de decisão. Recomendamos fazer o download do manual de uso do aplicativo (manual.pdf) e assistir ao vídeo 'Como preencher a planilha mabacr.xlsx?' para uma melhor compreensão de como usar o aplicativo. A planilha padrão para o preenchimento dos dados que serão analisados está disponível para download abaixo."),
         hr(),
         HTML("Manual de uso: <a href =
-               'https://arslabadack.shinyapps.io/mabacR/manualusuario.pdf'>
+               'https://arslabadack.shinyapps.io/mabacR/manual.pdf'>
                manual.pdf</a>"),
         p(),
         HTML("Planilha padrão: <a href =
@@ -58,7 +58,7 @@ ui <- fluidPage(
         tabPanel("Resultados",
                  fluidRow(
                    column(6,
-                          h4("Escolha Ótima"),
+                          h4("Ordenação"),
                           verbatimTextOutput("results")
                    ),
                    column(6,
