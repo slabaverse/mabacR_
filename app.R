@@ -37,7 +37,7 @@ ui <- fluidPage(
         p(),
         #upar o tcc aqui
         HTML("Implementação do Método Multicritério MABAC na Linguagem R: Uma Ferramenta para Tomada de Decisão <a href =
-               'Manual waspasWEB PT.pdf'>
+               'adam_slabadack_tcc'>
                tcc.pdf</a>"),
         p(),
         hr(),
