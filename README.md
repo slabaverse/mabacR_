@@ -29,8 +29,8 @@ A ferramenta foi desenvolvida utilizando a linguagem de programação **R**, em 
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/mabac-r.git
-   cd mabac-r
+   git clone https://github.com/slabaverse/mabacR_.git
+   cd mabacR_
    ```
 
 2. Certifique-se de ter o R e o RStudio instalados.
